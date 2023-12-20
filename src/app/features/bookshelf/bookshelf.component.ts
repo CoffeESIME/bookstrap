@@ -10,7 +10,6 @@ import { BookCardComponent } from './bookcard.component';
         BookCardComponent
     ],
     templateUrl: './bookshelf.component.html',
-    styleUrl: './bookshelf.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookshelfComponent { }
