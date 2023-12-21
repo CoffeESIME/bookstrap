@@ -1,8 +1,11 @@
 <section class="">
   <h1 class="p-4">Bookshelf</h1>
-    <article class="p-4 container gap-3 col m-auto d-flex">
-      <app-book-card></app-book-card>
-      <app-book-card></app-book-card>
-      <app-book-card></app-book-card>
-    </article>
+  <article class="p-4 container gap-2 m-auto row flex-nowrap" *ngIf="dataBooks">
+    <app-book-card
+      [book]="book"
+      class="m-auto"
+      style="width: 33%"
+      *ngFor="let book of dataBooks | slice : 0 : 3"
+    ></app-book-card>
+  </article>
 </section>
