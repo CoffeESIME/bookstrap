@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   OnDestroy,
   OnInit,
@@ -19,14 +20,19 @@ import { Subscription } from 'rxjs';
   providers: [BooksService],
 })
 export class BookshelfComponent implements OnInit, OnDestroy {
-  public dataBooks: Book[] | null = null;
-  private subscription: Subscription | null = null;
-  constructor(private booksService: BooksService) {}
+  public dataBooks: Book[] = [];
+  private subscription!: Subscription;
+
+  constructor(
+    private booksService: BooksService,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.subscription = this.booksService.getData().subscribe(
       (data) => {
         this.dataBooks = data;
+        this.cd.detectChanges();
       },
       (error) => console.error(error)
     );
