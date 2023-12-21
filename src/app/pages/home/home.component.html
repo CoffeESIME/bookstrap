@@ -1,19 +1,26 @@
 <main class="bg-warning-subtle vh-100">
-  <article class="m-auto w-75 h-auto p-0 mt-0 pt-5 pb-4">
+  <article class="m-auto p-0 mt-0 pt-5 pb-4" style="width: 90%">
     <app-user></app-user>
   </article>
-  <article class="row gap-4 w-75 h-auto m-auto bg-warning rounded-4 p-5 px-0">
-    <section class="h-50 col-5 rounded-4 bg-primary m-auto">
-      <app-bookshelf></app-bookshelf>
-    </section>
-    <section class="h-50 col-5 rounded-4 bg-primary m-auto">
-      <h1>Reading Now</h1>
-    </section>
-    <section class="h-50 col-5 rounded-4 bg-primary m-auto">
-      <h1>Purchase</h1>
-    </section>
-    <section class="h-50 col-5 rounded-4 bg-primary m-auto">
-      <h1>Book Reviews</h1>
-    </section>
+  <article
+    class="row gap-4 h-auto m-auto bg-warning rounded-4 p-5"
+    style="width: 90%"
+  >
+    <div class="row gap-5">
+      <section class="col rounded-4 bg-primary m-auto">
+        <app-bookshelf></app-bookshelf>
+      </section>
+      <section class="col rounded-4 bg-primary m-auto">
+        <h1>Reading Now</h1>
+      </section>
+    </div>
+    <div>
+      <section class="h-50 col rounded-4 bg-primary m-auto">
+        <h1>Purchase</h1>
+      </section>
+      <section class="h-50 col rounded-4 bg-primary m-auto">
+        <h1>Book Reviews</h1>
+      </section>
+    </div>
   </article>
 </main>

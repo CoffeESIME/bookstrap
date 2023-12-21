@@ -1,27 +1,38 @@
-  <div class="text-center position-relative rounded-4 p-3 bg-light">
-    <div
-      class="position-absolute translate-middle rounded-4"
-      style="top: 5%; left: 50%"
-    >
-      <img
-        src="https://placehold.co/50x100"
-        alt="Blackout by Sezen Ahsikal"
-        class="rounded-3"
-      />
-    </div>
-    <div class="mt-5">
-      <h3 class="fs-5">book.title</h3>
-      <h6>book.authors</h6>
-      <div class="row m-auto gap-2">
-        <button class="col rounded-5 bg-black m-auto p-0">
-          <h6 class="m-auto text-white" style="font-size: xx-small">View</h6>
-        </button>
-        <button class="col rounded-5 bg-danger col-6 m-auto p-0">
-          <h6 style="font-size: xx-small" class="m-0">View book</h6>
-        </button>
-        <button class="col rounded-5 bg-danger font-size:xx-small m-auto p-0">
-          <h6 style="font-size: xx-small" class="m-0">Buy for 16.98</h6>
-        </button>
-      </div>
+<div class="text-center position-relative rounded-4 p-3 bg-light">
+  <div
+    class="position-absolute translate-middle rounded-4"
+    style="top: 5%; left: 50%"
+  >
+    <img
+      src="https://placehold.co/50x100"
+      alt="Blackout by Sezen Ahsikal"
+      class="rounded-3"
+    />
+  </div>
+  <div class="mt-5" *ngIf="book">
+    <h3 style="font-size: x-small">{{ book.title }}</h3>
+    <h6 style="font-size: xx-small">{{ book.authors }}</h6>
+    <div class="row m-auto gap-1">
+      <button
+        class="col-4 rounded-5 bg-black m-auto p-0"
+        *ngIf="book.users_choice"
+      >
+        <h6 class="m-auto text-white" style="font-size: 0.6rem">View</h6>
+      </button>
+      <button
+        class="col-8 rounded-5 bg-danger m-auto p-0"
+        *ngIf="!book.users_choice"
+      >
+        <h6 style="font-size: 0.6rem" class="m-auto">View book</h6>
+      </button>
+      <button
+        class="col-7 rounded-5 bg-danger m-auto p-0"
+        *ngIf="book.users_choice"
+      >
+        <h6 style="font-size: 0.5rem" class="m-0">
+          Buy for {{ book.price.toFixed(2) }}
+        </h6>
+      </button>
     </div>
   </div>
+</div>
