@@ -5,14 +5,14 @@
       <div class="row mb-4">
         <app-book-card
           class="col-5 m-auto"
-          *ngFor="let book of dataBooks | slice : 0 : 2"
+          *ngFor="let book of dataBooks | slice : 1 : 3"
           [book]="book"
         ></app-book-card>
       </div>
       <div class="row">
         <app-book-card
           class="col-5 m-auto"
-          *ngFor="let book of dataBooks | slice : 0 : 2"
+          *ngFor="let book of dataBooks | slice : 3 : 5"
           [book]="book"
         ></app-book-card>
       </div>

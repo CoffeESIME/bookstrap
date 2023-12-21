@@ -13,7 +13,7 @@ import { Book } from '../../models/book.model';
   imports: [BookCardComponent, CommonModule],
 })
 export class ReadingNowComponent implements OnInit {
-  public dataBooks: Book[] | null = null;
+  public dataBooks: Book[] =[];
   constructor(
     private dataService: BooksService,
     private cd: ChangeDetectorRef
