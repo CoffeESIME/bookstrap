@@ -4,12 +4,12 @@
     style="top: 5%; left: 50%"
   >
     <img
-      src="https://placehold.co/50x100"
+      [src]="book.image"
       alt="Blackout by Sezen Ahsikal"
-      class="rounded-3"
+      class="rounded-3 w-75"
     />
   </div>
-  <div class="mt-5 py-4" *ngIf="book">
+  <div class="mt-5 py-4">
     <h3 style="font-size: x-small">{{ book.title }}</h3>
     <h6 style="font-size: xx-small">{{ book.authors }}</h6>
     <div class="row m-auto gap-1">

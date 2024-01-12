@@ -1,5 +1,5 @@
 <article class="p-3 container gap-3 row m-auto">
-  <h1 style="display: flex" class="p-0 m-auto">Reading Now</h1>
+  <h1 class="p-0 m-auto">Reading Now</h1>
   <article class="p-0 container">
     <div class="row mb-4 d-flex">
       <ng-container *ngIf="dataBooks$ | async as books">
@@ -12,7 +12,7 @@
         </app-book-card>
       </ng-container>
     </div>
-    <div class="row d-flex ">
+    <div class="row">
       <ng-container *ngIf="dataBooks$ | async as books">
         <app-book-card
           class="col-5"

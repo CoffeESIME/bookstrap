@@ -1,0 +1,11 @@
+<div class="container mt-4">
+    <h2 class="mb-3">Book Reviews</h2>
+      <article  *ngIf="dataBooks$ | async as dataBooks" class="d-flex gap-3 w-100 row p-2 ">
+        <app-book-review
+        [book]="book"
+          class=""
+          *ngFor="let book of dataBooks | slice : 0 : 3"
+        ></app-book-review>
+      </article>
+  </div>
+  

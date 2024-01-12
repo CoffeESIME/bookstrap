@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-reading-now',
   templateUrl: './reading-now.component.html',
-  styleUrls: ['./reading-now.component.css'],
   standalone: true,
   imports: [BookCardComponent, CommonModule],
 })

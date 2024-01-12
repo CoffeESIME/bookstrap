@@ -4,6 +4,7 @@ import { UserComponent } from '../../features/user/user.component';
 import { BookshelfComponent } from '../../features/bookshelf/bookshelf.component';
 import { ReadingNowComponent } from '../../features/reading-now/reading-now.component';
 import { PurchaseComponent } from '../../features/purchase/purchase.component';
+import { BooksReviewComponent } from '../../features/books-review/books-review.component';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import { PurchaseComponent } from '../../features/purchase/purchase.component';
     UserComponent,
     BookshelfComponent,
     ReadingNowComponent,
-    PurchaseComponent
+    PurchaseComponent,
+    BooksReviewComponent
   ],
   templateUrl: `./home.component.html`,
   changeDetection: ChangeDetectionStrategy.OnPush,
