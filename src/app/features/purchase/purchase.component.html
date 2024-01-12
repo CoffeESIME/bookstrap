@@ -1,0 +1,34 @@
+<article class="p-4 container gap-3 row m-auto d-flex">
+  <span class="row">
+    <h1 class="col m-auto p-0 d-flex">Purchases</h1>
+    <a class="col m-auto text-end p-0 text-warning text-underline-warning"
+      >View All</a
+    >
+  </span>
+  <table>
+    <thead>
+      <tr class="w-100 table">
+        <th class="col-4 px-1 py-2">Book</th>
+        <th class="col-2 px-1 py-2">Genre</th>
+        <th class="col-2 px-1 py-2">Date</th>
+        <th class="col-2 px-1 py-2">Status</th>
+        <th class="col-2 px-1 py-2">Price</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider" *ngIf="dataBooks$ | async as dataBooks">
+      <tr *ngFor="let book of dataBooks | slice : 0 : 3" class="">
+        <td class="fw-semibold">{{ book.title }}</td>
+        <td>{{ book.genre }}</td>
+        <td>18 Jun</td>
+        <td>
+          <span
+            class="badge rounded-4 fs-6"
+            ngClass="{{ book.status == 'Read' ? 'bg-success' : 'bg-warning' }}"
+            >{{ book.status }}</span
+          >
+        </td>
+        <td class="fw-semibold">${{ book.price.toFixed(2) }}</td>
+      </tr>
+    </tbody>
+  </table>
+</article>

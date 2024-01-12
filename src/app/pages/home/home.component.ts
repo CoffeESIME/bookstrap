@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { UserComponent } from '../../features/user/user.component';
 import { BookshelfComponent } from '../../features/bookshelf/bookshelf.component';
 import { ReadingNowComponent } from '../../features/reading-now/reading-now.component';
+import { PurchaseComponent } from '../../features/purchase/purchase.component';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import { ReadingNowComponent } from '../../features/reading-now/reading-now.comp
     UserComponent,
     BookshelfComponent,
     ReadingNowComponent,
+    PurchaseComponent
   ],
   templateUrl: `./home.component.html`,
   changeDetection: ChangeDetectionStrategy.OnPush,
