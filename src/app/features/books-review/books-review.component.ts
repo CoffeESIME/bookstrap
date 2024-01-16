@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Book } from '../../models/book.model';
-import { BookCardComponent } from './bookcard.component';
 import { CommonModule } from '@angular/common';
+import { BookReviewComponent } from './book-review.component';
 
 @Component({
-  selector: 'app-bookshelf',
+  selector: 'app-books-review',
   standalone: true,
-  imports: [CommonModule, BookCardComponent],
-  templateUrl: './bookshelf.component.html',
+  templateUrl: `./books-review.component.html`,
+  imports: [CommonModule, BookReviewComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BookshelfComponent {
+export class BooksReviewComponent {
   @Input() dataBooks!: Book[] ;
 }

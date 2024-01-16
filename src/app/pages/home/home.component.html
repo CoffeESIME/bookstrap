@@ -1,25 +1,25 @@
-<main class="bg-warning-subtle vh-100">
+<main style="background-color: #E4C382;">
   <article class="m-auto p-0 mt-0 pt-5 pb-4" style="width: 90%">
     <app-user></app-user>
   </article>
   <article
-    class="row gap-4 h-auto m-auto bg-warning rounded-4 p-5"
+    class="row gap-4 h-auto m-auto rounded-4 pb-4"
     style="width: 90%"
   >
-    <div class="row gap-5">
-      <section class="col rounded-4 bg-primary ">
-        <app-bookshelf></app-bookshelf>
+    <div class="row gap-5 p-0 m-0">
+      <section class="col rounded-4 bg-white" *ngIf="dataBooks$ | async as books">
+        <app-bookshelf [dataBooks]="books"></app-bookshelf>
       </section>
-      <section class="col rounded-4 bg-primary">
-        <app-reading-now></app-reading-now>
+      <section class="col rounded-4 bg-white " *ngIf="dataBooks$ | async as books">
+        <app-reading-now [dataBooks]="books"></app-reading-now>
       </section>
     </div>
-    <div class="row gap-5">
-      <section class="col rounded-4 bg-primary m-auto">
-        <app-purchase></app-purchase>
+    <div class="row gap-5 p-0 m-0">
+      <section class="col rounded-4 bg-white" *ngIf="dataBooks$ | async as books">
+        <app-purchase [dataBooks]="books"></app-purchase>
       </section>
-      <section class="col rounded-4 bg-primary m-auto">
-        <h1>Book Reviews</h1>
+      <section class="col rounded-4 bg-white" *ngIf="dataBooks$ | async as books">
+        <app-books-review [dataBooks]="books"></app-books-review>
       </section>
     </div>
   </article>
