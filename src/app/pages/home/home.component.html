@@ -3,23 +3,23 @@
     <app-user></app-user>
   </article>
   <article
-    class="row gap-4 h-auto m-auto rounded-4 pb-4 "
+    class="row gap-4 h-auto m-auto rounded-4 pb-4"
     style="width: 90%"
   >
     <div class="row gap-5 p-0 m-0">
-      <section class="col rounded-4 bg-white ">
-        <app-bookshelf></app-bookshelf>
+      <section class="col rounded-4 bg-white" *ngIf="dataBooks$ | async as books">
+        <app-bookshelf [dataBooks]="books"></app-bookshelf>
       </section>
-      <section class="col rounded-4 bg-white">
-        <app-reading-now></app-reading-now>
+      <section class="col rounded-4 bg-white " *ngIf="dataBooks$ | async as books">
+        <app-reading-now [dataBooks]="books"></app-reading-now>
       </section>
     </div>
     <div class="row gap-5 p-0 m-0">
-      <section class="col rounded-4 bg-white">
-        <app-purchase></app-purchase>
+      <section class="col rounded-4 bg-white" *ngIf="dataBooks$ | async as books">
+        <app-purchase [dataBooks]="books"></app-purchase>
       </section>
-      <section class="col rounded-4 bg-white">
-        <app-books-review></app-books-review>
+      <section class="col rounded-4 bg-white" *ngIf="dataBooks$ | async as books">
+        <app-books-review [dataBooks]="books"></app-books-review>
       </section>
     </div>
   </article>

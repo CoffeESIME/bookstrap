@@ -15,7 +15,7 @@
         <th class="col-2 px-1 py-2">Price</th>
       </tr>
     </thead>
-    <tbody class="table-group-divider" *ngIf="dataBooks$ | async as dataBooks">
+    <tbody class="table-group-divider">
       <tr *ngFor="let book of dataBooks | slice : 0 : 3" class="">
         <td class="fw-semibold">{{ book.title }}</td>
         <td>{{ book.genre }}</td>

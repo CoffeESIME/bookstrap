@@ -1,7 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Book } from '../../models/book.model';
-import { BooksService } from '../../services/books.service';
 import { CommonModule } from '@angular/common';
 import { BookReviewComponent } from './book-review.component';
 
@@ -13,9 +11,5 @@ import { BookReviewComponent } from './book-review.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BooksReviewComponent {
-  public dataBooks$: Observable<Book[]>;
-
-  constructor(private booksService: BooksService) {
-    this.dataBooks$ = this.booksService.getData();
-  }
+  @Input() dataBooks!: Book[] ;
 }

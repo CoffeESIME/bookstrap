@@ -1,7 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Book } from '../../models/book.model';
-import { BooksService } from '../../services/books.service';
 import { BookCardComponent } from './bookcard.component';
 import { CommonModule } from '@angular/common';
 
@@ -13,9 +11,5 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookshelfComponent {
-  public dataBooks$: Observable<Book[]>;
-
-  constructor(private booksService: BooksService) {
-    this.dataBooks$ = this.booksService.getData();
-  }
+  @Input() dataBooks!: Book[] ;
 }
